@@ -1,0 +1,144 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #fbc02d;
+    margin: 40px 0;
+    animation: fadeIn 2s ease-in;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+.work-section {
+    margin: 100px auto;
+    color: #fbc02d;
+}
+
+.work-section h2 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #fbc02d;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    animation: fadeInUp 1.5s ease-in-out; 
+}
+
+.work-item {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fbc02d;
+    padding: 60px 30px;
+    font-size: 1.4rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFade 1s forwards;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+.work-grid a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+.work-grid a .work-item {
+    display: block;
+}
+
+
+.work-item:hover {
+    transform: scale(1.08); 
+    background-color: #333;
+    color: #fff;
+}
+
+
+.ter {
+    text-align: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fdfcfc;
+    padding: 20px 0;
+    margin-top: 250px;
+    animation: fadeInUp 2s;
+}
+
+.ter nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.ter nav a:hover {
+    color: #fbc02d;
+}
+
+
+footer {
+    color: #888;
+    padding: 15px 0;
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

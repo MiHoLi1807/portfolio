@@ -1,0 +1,260 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+header {
+  text-align: center;
+  margin-top: 40px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+header h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fbc02d;
+  animation: bounceIn 2s ease-out;
+}
+header h2 {
+  font-size: 26px;
+  color: #ffffff;
+}
+
+header p {
+  font-size: 16px;
+  color: #666;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 45px 20px;
+  width: 100%;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 50px;
+}
+
+.contact-info {
+  width: 45%;
+  text-align: center;
+  padding: 20px;
+  animation: slideInLeft 1.5s ease-out;
+}
+
+.contact-info h2 {
+  font-size: 30px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+
+.contact-form {
+  width: 45%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 1.5s ease-out;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  width: 100px;
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #555;
+}
+
+
+.ter {
+  text-align: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fdfcfc;
+  padding: 20px 0;
+  margin-top: 140px;
+  animation: fadeInUp 2s;
+}
+
+.ter nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.ter nav a:hover {
+  color: #fbc02d;
+}
+
+
+footer {
+  color: #dfdfdf;
+  padding: 15px 0;
+  font-size: 12px;
+  background-color: rgba(255, 0, 0, 0);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 50px;
+  margin: 20px 0;
+  position: relative;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 50px; 
+  transition: transform 0.3s, color 0.3s; 
+  position: relative;
+}
+
+.social-icons a:hover {
+  color: #fbc02d;
+  transform: scale(1.3) rotate(10deg); 
+}
+
+
+.social-icons a::after {
+  content: attr(data-tooltip); 
+  position: absolute;
+  bottom: -40px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
